@@ -1,18 +1,13 @@
 import React from 'react'; //used to be required
 import Button from './Button'
 
-const Header = () => {
-    //function onClick that writes to the console when user clicks
-    const onClick = () => {
-        console.log('Click')
-    }
-
+const Header = ({title, onAdd, showAdd}) => {
     return (
     //This is where you can create JSX markup 
     //for your component!
     <header className='header'>
-        <h1>Task Tracker</h1>
-        <Button color='green' text='Add' onClick={onClick}/>
+        <h1>{title}</h1>
+        <Button color={showAdd ? 'red' : 'green'} text={showAdd ? 'Close' : 'Add'} onClick={onAdd}/>
 
     </header>
     );
@@ -20,6 +15,7 @@ const Header = () => {
 
 //good practice to set a default props
 Header.defaultProps = {
+    title:'Task Tracker',
     subtitle: 'Keep track of your tasks easily with React!',
 }
 

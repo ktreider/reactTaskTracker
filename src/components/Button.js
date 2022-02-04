@@ -3,7 +3,7 @@ import React from 'react'; //unneeded
 
 const Button = (props) => {
     
-    //add even onClick, set to function {onClick}
+    //add event onClick, set to function {onClick}
     return <button 
             onClick={props.onClick} 
             className='btn' 
@@ -12,9 +12,6 @@ const Button = (props) => {
         {props.text}
         </button>;
 };
-
-
-
 
 Button.defaultProps = {
     color: 'steelblue'
